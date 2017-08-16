@@ -11,26 +11,29 @@
     <div>
         <table>
             <tr>
-                <td>Usuario: </td>
+                <td>Usuario: {{ form.usuario.value }}</td>
             </tr>
             <tr>
-                <td>Contraseña: </td>
+                <td>Contraseña: {{ form.password.value }}</td>
             </tr>
         </table>
     </div>
     <form action="/controlador2" method="post">
+    	{% csrf_token %}
+        <div>
+        
+            <label for="{{ form.valor1.id_for_label }}">Valor 1:</label>
+        
+            {{ form.valor1 }}
     
         <div>
         
-            <label for="name">Valor 1:</label>
+            <label for="{{ form.valor2.id_for_label }}">Valor 2:</label>
         
-            <input type="text" id="valor1" name="user_valor1">   </div>
-    
-        <div>
-        
-            <label for="name">Valor 2:</label>
-        
-            <input type="text" id="valor2" name="user_valor2">   </div>
+            {{ form.valor2 }}
+
+	<input type="hidden" name="usuario" value="{{ form.usuario.value }}">
+	<input type="hidden" name="password" value="{{ form.password.value }}">
     
         <div class="button">
         

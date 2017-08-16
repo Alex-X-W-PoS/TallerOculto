@@ -9,18 +9,18 @@
 <body>
     <h1>Página 1</h1>
     <form action="/controlador1" method="post">
+    	{% csrf_token %}
+        <div>
+        
+            <label for="{{ form.usuario.id_for_label }}">Usuario:</label>
+        
+            {{ form.usuario }}
     
         <div>
         
-            <label for="name">Usuario:</label>
+            <label for="{{ form.password.id_for_label }}">Contraseña:</label>
         
-            <input type="text" id="name" name="user_name">   </div>
-    
-        <div>
-        
-            <label for="mail">Contraseña:</label>
-        
-            <input type="passwor" id="password" name="user_password">   </div>
+            {{ form.password }}
     
         <div class="button">
         
